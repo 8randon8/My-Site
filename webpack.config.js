@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, "./app/temp/scripts"),
     filename: "[name].js"
   },
-  module:{
+  module: {
     loaders: [
       {
         loader: 'babel-loader',

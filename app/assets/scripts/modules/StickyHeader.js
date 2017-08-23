@@ -16,12 +16,12 @@ class StickyHeader {
   }
 
   refreshWaypoints() {
-    this.lazyimages.on('load', function(){
+    this.lazyImages.load(function() {
       Waypoint.refreshAll();
     });
   }
 
-  addSmoothScrolling(){
+  addSmoothScrolling() {
     this.headerLinks.smoothScroll();
   }
 
@@ -29,7 +29,7 @@ class StickyHeader {
     var that = this;
     new Waypoint({
       element: this.headerTriggerElement[0],
-      handler: function(direction){
+      handler: function(direction) {
         if (direction == "down") {
           that.siteHeader.addClass("site-header--dark");
         } else {
@@ -38,13 +38,14 @@ class StickyHeader {
       }
     });
   }
-  createPageSectionWaypoints(){
+
+  createPageSectionWaypoints() {
     var that = this;
-    this.pageSections.each(function(){
+    this.pageSections.each(function() {
       var currentPageSection = this;
       new Waypoint({
         element: currentPageSection,
-        handler: function(direction){
+        handler: function(direction) {
           if (direction == "down") {
             var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
             that.headerLinks.removeClass("is-current-link");
@@ -56,7 +57,7 @@ class StickyHeader {
 
       new Waypoint({
         element: currentPageSection,
-        handler: function(direction){
+        handler: function(direction) {
           if (direction == "up") {
             var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
             that.headerLinks.removeClass("is-current-link");

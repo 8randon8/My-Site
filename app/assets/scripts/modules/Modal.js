@@ -8,7 +8,7 @@ class Modal {
     this.events();
   }
 
-  events(){
+  events() {
     // clicking the open modal button
     this.openModalButton.click(this.openModal.bind(this));
 
@@ -19,18 +19,18 @@ class Modal {
     $(document).keyup(this.keyPressHandler.bind(this));
   }
 
-  keyPressHandler(e){
-    if (e.keyCode == 27){
+  keyPressHandler(e) {
+    if (e.keyCode == 27) {
       this.closeModal();
     }
   }
 
-  openModal(){
+  openModal() {
     this.modal.addClass("modal--is-visible");
     return false;
   }
 
-  closeModal(){
+  closeModal() {
     this.modal.removeClass("modal--is-visible");
   }
 }
